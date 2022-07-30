@@ -1,0 +1,196 @@
+html,
+body {
+  height: 100%;
+}
+
+.buttonfontcustom {
+  font-size: 0.5rem;
+  text-align: center;
+}
+
+/*1rem = 16px*/
+/*
+####################################################
+M E D I A  Q U E R I E S
+####################################################
+*/
+
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Bootstrap 4 breakpoints
+*/
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) {
+  .buttonfontcustom {
+    font-size: 1rem;
+  } /*1rem = 16px*/
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+  .buttonfontcustom {
+    font-size: 2rem;
+  } /*1rem = 16px*/
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .buttonfontcustom {
+    font-size: 2rem;
+  } /*1rem = 16px*/
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .buttonfontcustom {
+    font-size: 2rem;
+  } /*1rem = 16px*/
+}
+
+.bg {
+  height: 100%;
+  background-image: url(img/space.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%vh;
+}
+
+.footercustom {
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+  justify-content: center;
+}
+
+.headlinetextcustom {
+  font-size: 2.5rem;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+}
+
+
+.fontforsite {
+  font-family: "Raleway", sans-serif;
+
+}
+/*1rem = 16px*/
+/*
+####################################################
+M E D I A  Q U E R I E S
+####################################################
+*/
+
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Bootstrap 4 breakpoints
+*/
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) {
+  .headlinetextcustom {
+    font-size: 4rem;
+  } /*1rem = 16px*/
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+  .headlinetextcustom {
+    font-size: 6rem;
+  } /*1rem = 16px*/
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .headlinetextcustom {
+    font-size: 6rem;
+  } /*1rem = 16px*/
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .headlinetextcustom {
+    font-size: 6rem;
+  } /*1rem = 16px*/
+}
+
+.overlay {
+  position: static;
+  min-height: 50%;
+  min-width: 50%;
+  left: 0;
+  top: 0;
+  background: rgba(204, 0, 0, 0.185);
+}
+
+.mainphoto {
+  height: 100vh;
+  background-image: url(../img/space.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.description {
+  padding: 2em;
+}
+.description h1 {
+  color: white;
+}
+
+.description button {
+  left: 50%;
+  position: static;
+  border: 1px solid #ffffff !important;
+  background: #ffffff !important;
+  width: min-content;
+  color: rgb(0, 0, 0);
+}
+/* Style all font awesome icons */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  color: grey;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+  color: white;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+#mmenu_screen > .row {
+  min-height: 100vh;
+}
+
+.flex-fill {
+  flex: 1 1 auto;
+}
+
+.card-info {
+  width: 100px;
+  height: 100px;
+}
+
+.textArea {
+  width: 100%;
+  height: 100%;
+}
+
+.fillAvailableSpace {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
