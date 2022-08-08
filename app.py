@@ -9,8 +9,15 @@ def create_app(test_config=None):
     
     # a simple page that says hello
     @app.route('/')
-    def hello():
+    def indexpage():
         return render_template(
         "index.html"
     )
+    
+    @app.route('/base')
+    def dashboardpage():
+        return render_template(
+        "base.html"
+    )
+        
     return app
