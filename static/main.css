@@ -1,5 +1,5 @@
 .header{
-    background-image: url(img/space.jpg);
+    background-image: url(/static/space.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
