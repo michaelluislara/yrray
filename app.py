@@ -26,4 +26,10 @@ def create_app(test_config=None):
         "dashboardlist.html"
     )
     
+    @app.route('/about')
+    def aboutpage():
+        return render_template(
+        "about.html"
+    )
+    
     return app
