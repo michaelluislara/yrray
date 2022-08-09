@@ -1,14 +1,19 @@
-{% extends "base.html" %}
-{% block body %}      
+{% extends "base.html" %} {% block body %}
 <body>
-      <div class="container-fluid m-0 mainphoto" style="background-image: url(../static/space.jpg);">
-        <div class="overlay row h-100">
-          <div class="container text-center description my-auto mx-auto">
-            <h1 class="headlinetextcustom">    North American economic data visualized</h1>
-            <a href="dashboardlist.html" class="btn btn-primary btn-lg mx-auto">Take a look</a>
-          </div>
-        </div>
+  <div
+    class="container-fluid m-0 mainphoto"
+    style="background-image: url(../static/space.jpg)"
+  >
+    <div class="overlay row h-100">
+      <div class="container text-center description my-auto mx-auto">
+        <h1 class="headlinetextcustom">
+          North American economic data visualized
+        </h1>
+        <a href="{{ url_for('dashboardlist') }}" class="btn btn-primary btn-lg mx-auto"
+          >Take a look</a
+        >
       </div>
-
+    </div>
+  </div>
 </body>
 {% endblock %}

@@ -15,7 +15,7 @@ def create_app(test_config=None):
     )
     
     @app.route('/base')
-    def dashboardpage():
+    def basepage():
         return render_template(
         "base.html"
     )
@@ -25,5 +25,5 @@ def create_app(test_config=None):
         return render_template(
         "dashboardlist.html"
     )
-        
+    
     return app
