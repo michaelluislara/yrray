@@ -19,5 +19,11 @@ def create_app(test_config=None):
         return render_template(
         "base.html"
     )
+    
+    @app.route('/dashboardlist')
+    def dashboardpage():
+        return render_template(
+        "dashboardlist.html"
+    )
         
     return app
