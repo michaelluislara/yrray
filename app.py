@@ -2,11 +2,7 @@ import os
 import requests
 from flask import Flask, render_template
 
-cubes = requests.get('https://www150.statcan.gc.ca/t1/wds/rest/getAllCubesListLite', stream=True)
-cubelist = cubes.json()
-newlist = []
-for x in range(0,len(cubelist)):
-  newlist.append(cubelist[x]['cubeTitleEn'])
+
 
 def create_app(test_config=None):
     # create and configure the app
@@ -27,6 +23,12 @@ def create_app(test_config=None):
     
     @app.route('/dashboardlist')
     def dashboardpage():
+        
+        cubes = requests.get('https://www150.statcan.gc.ca/t1/wds/rest/getAllCubesListLite', stream=True)
+        cubelist = cubes.json()
+        newlist = []
+        for x in range(0,len(cubelist)):
+            newlist.append(cubelist[x]['cubeTitleEn'])
         return render_template(
         "dashboardlist.html",
         newlist=newlist
