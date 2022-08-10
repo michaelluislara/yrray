@@ -25,51 +25,13 @@
         </div>
 
         <div class="list-group" id="the-list">
+          {{ for dashboard in newlist }}
           <a
             href="Dashboards/HousingStarts.html"
             class="list-group-item list-group-item-action list-group-item-secondary"
-            >Housing Starts</a
+            >{{ dashboard }}</a
           >
-          <a
-            href="Dashboards/GDP.html"
-            class="list-group-item list-group-item-action list-group-item-secondary"
-            >GDP</a
-          >
-          <a
-            href="Dashboards/CPI.html"
-            class="list-group-item list-group-item-action list-group-item-secondary"
-            >Consumer Price Index</a
-          >
-          <a
-            href="Dashboards/InternationalTravel.html"
-            class="list-group-item list-group-item-action list-group-item-secondary"
-            >International Travel</a
-          >
-          <a
-            href="Dashboards/Unemployment.html"
-            class="list-group-item list-group-item-action list-group-item-secondary"
-            >Unemployment</a
-          >
-          <a
-            href="Dashboards/HousingAffordability.html"
-            class="list-group-item list-group-item-action list-group-item-secondary"
-            >Housing Affordability</a
-          >
-          <a
-            href="Dashboards/Immigration.html"
-            class="list-group-item list-group-item-action list-group-item-secondary"
-            >Immigration</a
-          >
-          <a
-            href="Dashboards\Vacancy Rates.html"
-            class="list-group-item list-group-item-action list-group-item-secondary"
-            >Vacancy Rates</a
-          >
-          <a
-            href="Dashboards\BalanceofTrade.html"
-            class="list-group-item list-group-item-action list-group-item-secondary"
-            >Balance Of Trade</a
-          >
+          {{ endfor }}
         </div>
       </div>
     </div>
