@@ -1,4 +1,3 @@
-import os
 import requests
 from flask import Flask, render_template, request, url_for, flash, redirect
 from forms import LoginForm, SearchForm
@@ -6,7 +5,10 @@ from config import Config
 cubes = requests.get('https://www150.statcan.gc.ca/t1/wds/rest/getAllCubesListLite', stream=True)
 cubelist = cubes.json()
 cubelist = sorted(cubelist, key=lambda d: d['cubeTitleEn'])
-import os, re
+import os, re, models
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+import markupsafe
 
 
 
@@ -29,23 +31,20 @@ def create_app(test_config=None):
     
     @app.route('/dashboardlist', methods=('GET','POST'))
     def dashboardpage(cubelist=cubelist):
-        # if request.method == 'POST':
-        #     form = SearchForm()
-        #     searchterm = request.form['searchfield']
-        #     flash(f"you entered {searchterm}")
-        #     if not searchterm:
-        #         flash('A search term is required.')
-        #     else:
-        #         newlist = {}
-        #     reobj = re.compile(searchterm)
-        #     for key in cubelist.keys():
-        #         if(reobj.search(key)):
-        #             newlist[key] = newlist[key].values
-        #     return redirect("dashboardlist.html", cubelist=newlist)
+        form = SearchForm()
+        if form.validate_on_submit():
+            newlist = []
+            reobj = re.compile(markupsafe.escape(form.searchterm.data), re.IGNORECASE)
+            for i in cubelist:
+                result = reobj.search(string=i['cubeTitleEn'])
+                if result is not None:
+                    newlist.append(i)
+            return render_template("dashboardlist.html", cubelist=newlist, form=form)
+            
+            # return redirect('/about')
         return render_template(
         "dashboardlist.html",
-        cubelist=cubelist
-    )
+        cubelist=cubelist, form=form)
     
     @app.route('/about')
     def aboutpage():
@@ -60,6 +59,6 @@ def create_app(test_config=None):
             flash('Login requested for user {}, remember_me={}'.format(
             form.username.data, form.remember_me.data))
             return redirect('/about')
-        return render_template('login.html', title='Sign In', form=form)
+        return render_template("login.html", title='Sign In', form=form)
     
     return app
